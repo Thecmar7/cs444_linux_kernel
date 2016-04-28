@@ -8,7 +8,10 @@ April 25, 2016
 |	10:57 pm	-	Time to code, looking up what a SSFT is
 
 April 26, 2016
-|	 8:40 pm	-	Added some stuff to the linked list
-|	 9:00 pm	-	
-|
-		
+|	 8:40 pm	-	Added some stuff
+
+Aprtil 27
+|	 3:20 pm	-	Started messing with config
+|	 4:20 pm	-	nothing works
+|	 6:05 pm	-	Stuff now works, but not all of it
+|	 6:32 pm	-	working on the write up
