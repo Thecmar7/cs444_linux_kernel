@@ -15,3 +15,6 @@ Aprtil 27
 |	 4:20 pm	-	nothing works
 |	 6:05 pm	-	Stuff now works, but not all of it
 |	 6:32 pm	-	working on the write up
+|	 8:46 pm	-	IT'S WORKING!!
+|	 9:02 pm	-	now we have to make the it do the patch stuff
+|	 
