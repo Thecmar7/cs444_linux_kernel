@@ -1,6 +1,6 @@
 /*
- * Author:	Cramer Smith
- * Class:	CS444 - Spring 2016
+ * Author:		Cramer Smith
+ * Class:		CS444 - Spring 2016
  * Assignment:	Assignment 2 - SSTF I/O Scheduler
  */
 
@@ -22,57 +22,49 @@ static void look_merged_requests
     list_del_init(&next->queuelist);
 }
 
+/* 
+ look_dispatch
+ */
 static int look_dispatch(struct request_queue *q, int force)
 {
     struct look_data *nd = q->elevator->elevator_data;
-    
     printk("Here is the start of dispatch\n");
 
-    if(!list_empty(&nd->queue))
-    {
+    if(!list_empty(&nd->queue)) {
         struct request *nxt_rq, *prv_rq, *rq;
 	
     	nxt_rq = list_entry(nd->queue.next, struct request, queuelist);
     	prv_rq = list_entry(nd->queue.prev, struct request, queuelist);
 
-    	if(prv_rq == nxt_rq)
-            {
-                printk("There is one request\n");
-                rq = nxt_rq;   
-            }
-            else
-            {
-                printk("There are mutliple requests\n");
+    	if(prv_rq == nxt_rq) {
+			printk("There is one request\n");
+			rq = nxt_rq;
+		} else {
+			printk("There are mutliple requests\n");
 
-    	    if(nd->dir == 1)
-                {
-                    printk("Queue direction is going forward\n");
+    	    if(nd->dir == 1) {
+				printk("Queue direction is going forward\n");
     		
-    		if(nxt_rq->__sector > nd->hp)
-    		    rq = nxt_rq;
+				if(nxt_rq->__sector > nd->hp) {
+					rq = nxt_rq;
 
-    		else
-    		{
-    		    nd->dir = 0;
-                        rq = prv_rq;
-                    }
-                }
+				} else {
+					nd->dir = 0;
+					rq = prv_rq;
+				}
+			} else {
+				printk("Queue direction is going backward\n");
 
-    	    else
-    	    {
-    		printk("Queue direction is going backward\n");
+				if(prv_rq->__sector < nd->hp) {
+					rq = prv_rq;
+				} else {
+					nd->dir = 1;
+					rq = nxt_rq;
+				}
+			}
+		}
 
-    		if(prv_rq->__sector < nd->hp)
-                        rq = prv_rq;
-    		else
-    		{
-    		    nd->dir = 1;
-    		    rq = nxt_rq;
-    		}
-	    }
-	}
-
-	printk("<NOW EXECUTING>\n");   
+		printk("<NOW EXECUTING>\n");
         //Remove it from the queue we just got it from
         list_del_init(&rq->queuelist);
         //get the new position for the read head
@@ -94,26 +86,22 @@ static void look_add_request(struct request_queue *q, struct request *rq)
  
     printk("Starting add\n");
 
-    if(list_empty(&nd->queue))
-    {
+    if(list_empty(&nd->queue)) {
         printk("The list is empty\n");
         list_add(&rq->queuelist, &nd->queue);
-    }
-    else
-    {
+    } else {
         printk("Locating position for req\n");
 
-	nxt_rq = list_entry(nd->queue.next, struct request, queuelist);
-    prv_rq = list_entry(nd->queue.prev, struct request, queuelist);
+		nxt_rq = list_entry(nd->queue.next, struct request, queuelist);
+		prv_rq = list_entry(nd->queue.prev, struct request, queuelist);
 
-	 while(blk_rq_pos(rq) > blk_rq_pos(nxt_rq))
-    {
-        nxt_rq = list_entry(nxt_rq->queuelist.next, struct request, queuelist);
-        prv_rq = list_entry(prv_rq->queuelist.prev, struct request, queuelist);
-    }
+		while(blk_rq_pos(rq) > blk_rq_pos(nxt_rq)) {
+			nxt_rq = list_entry(nxt_rq->queuelist.next, struct request, queuelist);
+			prv_rq = list_entry(prv_rq->queuelist.prev, struct request, queuelist);
+		}
 
-	list_add(&rq->queuelist, &prv_rq->queuelist);
-        printk("Found the position\n");
+		list_add(&rq->queuelist, &prv_rq->queuelist);
+		printk("Found the position\n");
     }
     printk("SSTF adding %llu\n", (unsigned long long) rq->__sector);
 }
@@ -124,8 +112,9 @@ look_former_request(struct request_queue *q, struct request *rq)
 {
     struct look_data *nd = q->elevator->elevator_data;
 
-    if(rq->queuelist.prev == &nd->queue)
+	if(rq->queuelist.prev == &nd->queue) {
         return NULL;
+	}
     return list_entry(rq->queuelist.prev, struct request, queuelist);
 }
 
@@ -134,8 +123,9 @@ look_latter_request(struct request_queue *q, struct request *rq)
 {
     struct look_data *nd = q->elevator->elevator_data;
 
-    if(rq->queuelist.next == &nd->queue)
+	if(rq->queuelist.next == &nd->queue) {
         return NULL;
+	}
     return list_entry(rq->queuelist.next, struct request, queuelist);
 }
 
@@ -145,14 +135,14 @@ static int look_init_queue(struct request_queue *q, struct elevator_type *e)
     struct elevator_queue *eq;
 
     eq = elevator_alloc(q, e);
-    if(!eq)
+	if(!eq) {
         return -ENOMEM;
-
+	}
+		
     nd = kmalloc_node(sizeof(*nd), GFP_KERNEL, q->node);
-    if(!nd)
-    {
-       kobject_put(&eq->kobj);
-        return -ENOMEM;
+    if(!nd) {
+		kobject_put(&eq->kobj);
+		return -ENOMEM;
     }
   
     nd->hp = 0;

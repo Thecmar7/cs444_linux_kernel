@@ -1,0 +1,1720 @@
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-cgroup.o and block/blk-cgroup.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-cgroup.o.cmd block/.blk-cgroup.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-cgroup.o.cmd	2016-04-27 20:52:42.000157000 -0700
++++ block/.blk-cgroup.o.cmd	2016-04-27 20:28:51.914797778 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-cgroup.o := gcc -Wp,-MD,block/.blk-cgroup.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_cgroup)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_cgroup)" -c -o block/blk-cgroup.o block/blk-cgroup.c
++cmd_block/blk-cgroup.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-cgroup.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_cgroup)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_cgroup)" -c -o block/blk-cgroup.o block/blk-cgroup.c
+ 
+ source_block/blk-cgroup.o := block/blk-cgroup.c
+ 
+@@ -119,7 +119,7 @@
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/stringify.h \
+   include/linux/export.h \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-core.o and block/blk-core.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-core.o.cmd block/.blk-core.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-core.o.cmd	2016-04-27 20:52:41.001218000 -0700
++++ block/.blk-core.o.cmd	2016-04-27 20:28:36.267533814 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-core.o := gcc -Wp,-MD,block/.blk-core.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_core)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_core)" -c -o block/blk-core.o block/blk-core.c
++cmd_block/blk-core.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-core.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_core)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_core)" -c -o block/blk-core.o block/blk-core.c
+ 
+ source_block/blk-core.o := block/blk-core.c
+ 
+@@ -16,7 +16,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-exec.o and block/blk-exec.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-exec.o.cmd block/.blk-exec.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-exec.o.cmd	2016-04-27 20:52:44.000331000 -0700
++++ block/.blk-exec.o.cmd	2016-04-27 20:28:39.865594511 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-exec.o := gcc -Wp,-MD,block/.blk-exec.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_exec)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_exec)" -c -o block/blk-exec.o block/blk-exec.c
++cmd_block/blk-exec.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-exec.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_exec)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_exec)" -c -o block/blk-exec.o block/blk-exec.c
+ 
+ source_block/blk-exec.o := block/blk-exec.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-flush.o and block/blk-flush.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-flush.o.cmd block/.blk-flush.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-flush.o.cmd	2016-04-27 20:52:41.001555000 -0700
++++ block/.blk-flush.o.cmd	2016-04-27 20:28:37.741558680 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-flush.o := gcc -Wp,-MD,block/.blk-flush.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_flush)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_flush)" -c -o block/blk-flush.o block/blk-flush.c
++cmd_block/blk-flush.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-flush.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_flush)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_flush)" -c -o block/blk-flush.o block/blk-flush.c
+ 
+ source_block/blk-flush.o := block/blk-flush.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-ioc.o and block/blk-ioc.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-ioc.o.cmd block/.blk-ioc.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-ioc.o.cmd	2016-04-27 20:52:42.000397000 -0700
++++ block/.blk-ioc.o.cmd	2016-04-27 20:28:38.885577979 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-ioc.o := gcc -Wp,-MD,block/.blk-ioc.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_ioc)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_ioc)" -c -o block/blk-ioc.o block/blk-ioc.c
++cmd_block/blk-ioc.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-ioc.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_ioc)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_ioc)" -c -o block/blk-ioc.o block/blk-ioc.c
+ 
+ source_block/blk-ioc.o := block/blk-ioc.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-iopoll.o and block/blk-iopoll.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-iopoll.o.cmd block/.blk-iopoll.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-iopoll.o.cmd	2016-04-27 20:52:44.000414000 -0700
++++ block/.blk-iopoll.o.cmd	2016-04-27 20:28:42.188633700 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-iopoll.o := gcc -Wp,-MD,block/.blk-iopoll.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_iopoll)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_iopoll)" -c -o block/blk-iopoll.o block/blk-iopoll.c
++cmd_block/blk-iopoll.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-iopoll.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_iopoll)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_iopoll)" -c -o block/blk-iopoll.o block/blk-iopoll.c
+ 
+ source_block/blk-iopoll.o := block/blk-iopoll.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-lib.o and block/blk-lib.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-lib.o.cmd block/.blk-lib.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-lib.o.cmd	2016-04-27 20:52:42.000586000 -0700
++++ block/.blk-lib.o.cmd	2016-04-27 20:28:42.913645932 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-lib.o := gcc -Wp,-MD,block/.blk-lib.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_lib)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_lib)" -c -o block/blk-lib.o block/blk-lib.c
++cmd_block/blk-lib.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-lib.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_lib)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_lib)" -c -o block/blk-lib.o block/blk-lib.c
+ 
+ source_block/blk-lib.o := block/blk-lib.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-map.o and block/blk-map.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-map.o.cmd block/.blk-map.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-map.o.cmd	2016-04-27 20:52:41.001606000 -0700
++++ block/.blk-map.o.cmd	2016-04-27 20:28:39.332585520 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-map.o := gcc -Wp,-MD,block/.blk-map.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_map)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_map)" -c -o block/blk-map.o block/blk-map.c
++cmd_block/blk-map.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-map.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_map)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_map)" -c -o block/blk-map.o block/blk-map.c
+ 
+ source_block/blk-map.o := block/blk-map.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-merge.o and block/blk-merge.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-merge.o.cmd block/.blk-merge.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-merge.o.cmd	2016-04-27 20:52:41.000099000 -0700
++++ block/.blk-merge.o.cmd	2016-04-27 20:28:40.533605781 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-merge.o := gcc -Wp,-MD,block/.blk-merge.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_merge)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_merge)" -c -o block/blk-merge.o block/blk-merge.c
++cmd_block/blk-merge.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-merge.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_merge)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_merge)" -c -o block/blk-merge.o block/blk-merge.c
+ 
+ source_block/blk-merge.o := block/blk-merge.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-mq-cpumap.o and block/blk-mq-cpumap.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-cpumap.o.cmd block/.blk-mq-cpumap.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-cpumap.o.cmd	2016-04-27 20:52:42.000749000 -0700
++++ block/.blk-mq-cpumap.o.cmd	2016-04-27 20:28:46.710709987 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-mq-cpumap.o := gcc -Wp,-MD,block/.blk-mq-cpumap.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_cpumap)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_cpumap)" -c -o block/blk-mq-cpumap.o block/blk-mq-cpumap.c
++cmd_block/blk-mq-cpumap.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-mq-cpumap.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_cpumap)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_cpumap)" -c -o block/blk-mq-cpumap.o block/blk-mq-cpumap.c
+ 
+ source_block/blk-mq-cpumap.o := block/blk-mq-cpumap.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-mq-cpu.o and block/blk-mq-cpu.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-cpu.o.cmd block/.blk-mq-cpu.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-cpu.o.cmd	2016-04-27 20:52:41.001649000 -0700
++++ block/.blk-mq-cpu.o.cmd	2016-04-27 20:28:46.146700473 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-mq-cpu.o := gcc -Wp,-MD,block/.blk-mq-cpu.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_cpu)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_cpu)" -c -o block/blk-mq-cpu.o block/blk-mq-cpu.c
++cmd_block/blk-mq-cpu.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-mq-cpu.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_cpu)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_cpu)" -c -o block/blk-mq-cpu.o block/blk-mq-cpu.c
+ 
+ source_block/blk-mq-cpu.o := block/blk-mq-cpu.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-mq.o and block/blk-mq.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq.o.cmd block/.blk-mq.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq.o.cmd	2016-04-27 20:52:43.000809000 -0700
++++ block/.blk-mq.o.cmd	2016-04-27 20:28:44.267668774 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-mq.o := gcc -Wp,-MD,block/.blk-mq.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq)" -c -o block/blk-mq.o block/blk-mq.c
++cmd_block/blk-mq.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-mq.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq)" -c -o block/blk-mq.o block/blk-mq.c
+ 
+ source_block/blk-mq.o := block/blk-mq.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-mq-sysfs.o and block/blk-mq-sysfs.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-sysfs.o.cmd block/.blk-mq-sysfs.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-sysfs.o.cmd	2016-04-27 20:52:41.001625000 -0700
++++ block/.blk-mq-sysfs.o.cmd	2016-04-27 20:28:45.586691025 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-mq-sysfs.o := gcc -Wp,-MD,block/.blk-mq-sysfs.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_sysfs)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_sysfs)" -c -o block/blk-mq-sysfs.o block/blk-mq-sysfs.c
++cmd_block/blk-mq-sysfs.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-mq-sysfs.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_sysfs)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_sysfs)" -c -o block/blk-mq-sysfs.o block/blk-mq-sysfs.c
+ 
+ source_block/blk-mq-sysfs.o := block/blk-mq-sysfs.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-mq-tag.o and block/blk-mq-tag.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-tag.o.cmd block/.blk-mq-tag.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-mq-tag.o.cmd	2016-04-27 20:52:41.000452000 -0700
++++ block/.blk-mq-tag.o.cmd	2016-04-27 20:28:44.945680212 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-mq-tag.o := gcc -Wp,-MD,block/.blk-mq-tag.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_tag)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_tag)" -c -o block/blk-mq-tag.o block/blk-mq-tag.c
++cmd_block/blk-mq-tag.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-mq-tag.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_mq_tag)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_mq_tag)" -c -o block/blk-mq-tag.o block/blk-mq-tag.c
+ 
+ source_block/blk-mq-tag.o := block/blk-mq-tag.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-settings.o and block/blk-settings.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-settings.o.cmd block/.blk-settings.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-settings.o.cmd	2016-04-27 20:52:43.000689000 -0700
++++ block/.blk-settings.o.cmd	2016-04-27 20:28:38.352568987 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-settings.o := gcc -Wp,-MD,block/.blk-settings.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_settings)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_settings)" -c -o block/blk-settings.o block/blk-settings.c
++cmd_block/blk-settings.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-settings.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_settings)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_settings)" -c -o block/blk-settings.o block/blk-settings.c
+ 
+ source_block/blk-settings.o := block/blk-settings.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-softirq.o and block/blk-softirq.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-softirq.o.cmd block/.blk-softirq.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-softirq.o.cmd	2016-04-27 20:52:42.000797000 -0700
++++ block/.blk-softirq.o.cmd	2016-04-27 20:28:40.992613524 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-softirq.o := gcc -Wp,-MD,block/.blk-softirq.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_softirq)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_softirq)" -c -o block/blk-softirq.o block/blk-softirq.c
++cmd_block/blk-softirq.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-softirq.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_softirq)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_softirq)" -c -o block/blk-softirq.o block/blk-softirq.c
+ 
+ source_block/blk-softirq.o := block/blk-softirq.c
+ 
+@@ -14,7 +14,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-sysfs.o and block/blk-sysfs.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-sysfs.o.cmd block/.blk-sysfs.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-sysfs.o.cmd	2016-04-27 20:52:44.000160000 -0700
++++ block/.blk-sysfs.o.cmd	2016-04-27 20:28:36.999546162 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-sysfs.o := gcc -Wp,-MD,block/.blk-sysfs.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_sysfs)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_sysfs)" -c -o block/blk-sysfs.o block/blk-sysfs.c
++cmd_block/blk-sysfs.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-sysfs.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_sysfs)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_sysfs)" -c -o block/blk-sysfs.o block/blk-sysfs.c
+ 
+ source_block/blk-sysfs.o := block/blk-sysfs.c
+ 
+@@ -14,7 +14,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-tag.o and block/blk-tag.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-tag.o.cmd block/.blk-tag.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-tag.o.cmd	2016-04-27 20:52:42.000929000 -0700
++++ block/.blk-tag.o.cmd	2016-04-27 20:28:35.508521010 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-tag.o := gcc -Wp,-MD,block/.blk-tag.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_tag)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_tag)" -c -o block/blk-tag.o block/blk-tag.c
++cmd_block/blk-tag.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-tag.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_tag)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_tag)" -c -o block/blk-tag.o block/blk-tag.c
+ 
+ source_block/blk-tag.o := block/blk-tag.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/blk-timeout.o and block/blk-timeout.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-timeout.o.cmd block/.blk-timeout.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.blk-timeout.o.cmd	2016-04-27 20:52:42.000083000 -0700
++++ block/.blk-timeout.o.cmd	2016-04-27 20:28:41.565623191 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/blk-timeout.o := gcc -Wp,-MD,block/.blk-timeout.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_timeout)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_timeout)" -c -o block/blk-timeout.o block/blk-timeout.c
++cmd_block/blk-timeout.o := i586-poky-linux-gcc -Wp,-MD,block/.blk-timeout.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(blk_timeout)"  -D"KBUILD_MODNAME=KBUILD_STR(blk_timeout)" -c -o block/blk-timeout.o block/blk-timeout.c
+ 
+ source_block/blk-timeout.o := block/blk-timeout.c
+ 
+@@ -14,7 +14,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/bsg.o and block/bsg.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.bsg.o.cmd block/.bsg.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.bsg.o.cmd	2016-04-27 20:52:42.001322000 -0700
++++ block/.bsg.o.cmd	2016-04-27 20:28:50.984782089 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/bsg.o := gcc -Wp,-MD,block/.bsg.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(bsg)"  -D"KBUILD_MODNAME=KBUILD_STR(bsg)" -c -o block/bsg.o block/bsg.c
++cmd_block/bsg.o := i586-poky-linux-gcc -Wp,-MD,block/.bsg.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(bsg)"  -D"KBUILD_MODNAME=KBUILD_STR(bsg)" -c -o block/bsg.o block/bsg.c
+ 
+ source_block/bsg.o := block/bsg.c
+ 
+@@ -102,7 +102,7 @@
+     $(wildcard include/config/prove/locking.h) \
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/built-in.o and block/built-in.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.built-in.o.cmd block/.built-in.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.built-in.o.cmd	2016-04-27 20:52:42.001288000 -0700
++++ block/.built-in.o.cmd	2016-04-27 20:28:55.502858308 -0700
+@@ -1 +1 @@
+-cmd_block/built-in.o :=  ld -m elf_i386   -r -o block/built-in.o block/elevator.o block/blk-core.o block/blk-tag.o block/blk-sysfs.o block/blk-flush.o block/blk-settings.o block/blk-ioc.o block/blk-map.o block/blk-exec.o block/blk-merge.o block/blk-softirq.o block/blk-timeout.o block/blk-iopoll.o block/blk-lib.o block/blk-mq.o block/blk-mq-tag.o block/blk-mq-sysfs.o block/blk-mq-cpu.o block/blk-mq-cpumap.o block/ioctl.o block/genhd.o block/scsi_ioctl.o block/partition-generic.o block/partitions/built-in.o block/bsg.o block/blk-cgroup.o block/noop-iosched.o block/deadline-iosched.o block/cfq-iosched.o 
++cmd_block/built-in.o :=  i586-poky-linux-ld -m elf_i386   -r -o block/built-in.o block/elevator.o block/blk-core.o block/blk-tag.o block/blk-sysfs.o block/blk-flush.o block/blk-settings.o block/blk-ioc.o block/blk-map.o block/blk-exec.o block/blk-merge.o block/blk-softirq.o block/blk-timeout.o block/blk-iopoll.o block/blk-lib.o block/blk-mq.o block/blk-mq-tag.o block/blk-mq-sysfs.o block/blk-mq-cpu.o block/blk-mq-cpumap.o block/ioctl.o block/genhd.o block/scsi_ioctl.o block/partition-generic.o block/partitions/built-in.o block/bsg.o block/blk-cgroup.o block/noop-iosched.o block/deadline-iosched.o block/cfq-iosched.o block/sstf-iosched.o 
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/cfq-iosched.o and block/cfq-iosched.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.cfq-iosched.o.cmd block/.cfq-iosched.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.cfq-iosched.o.cmd	2016-04-27 20:52:42.000111000 -0700
++++ block/.cfq-iosched.o.cmd	2016-04-27 20:28:54.853847359 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/cfq-iosched.o := gcc -Wp,-MD,block/.cfq-iosched.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(cfq_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(cfq_iosched)" -c -o block/cfq-iosched.o block/cfq-iosched.c
++cmd_block/cfq-iosched.o := i586-poky-linux-gcc -Wp,-MD,block/.cfq-iosched.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(cfq_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(cfq_iosched)" -c -o block/cfq-iosched.o block/cfq-iosched.c
+ 
+ source_block/cfq-iosched.o := block/cfq-iosched.c
+ 
+@@ -104,7 +104,7 @@
+     $(wildcard include/config/prove/locking.h) \
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/deadline-iosched.o and block/deadline-iosched.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.deadline-iosched.o.cmd block/.deadline-iosched.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.deadline-iosched.o.cmd	2016-04-27 20:52:44.000053000 -0700
++++ block/.deadline-iosched.o.cmd	2016-04-27 20:28:52.952815290 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/deadline-iosched.o := gcc -Wp,-MD,block/.deadline-iosched.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(deadline_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(deadline_iosched)" -c -o block/deadline-iosched.o block/deadline-iosched.c
++cmd_block/deadline-iosched.o := i586-poky-linux-gcc -Wp,-MD,block/.deadline-iosched.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(deadline_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(deadline_iosched)" -c -o block/deadline-iosched.o block/deadline-iosched.c
+ 
+ source_block/deadline-iosched.o := block/deadline-iosched.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/elevator.o and block/elevator.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.elevator.o.cmd block/.elevator.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.elevator.o.cmd	2016-04-27 20:52:42.001274000 -0700
++++ block/.elevator.o.cmd	2016-04-27 20:28:34.814509301 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/elevator.o := gcc -Wp,-MD,block/.elevator.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(elevator)"  -D"KBUILD_MODNAME=KBUILD_STR(elevator)" -c -o block/elevator.o block/elevator.c
++cmd_block/elevator.o := i586-poky-linux-gcc -Wp,-MD,block/.elevator.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(elevator)"  -D"KBUILD_MODNAME=KBUILD_STR(elevator)" -c -o block/elevator.o block/elevator.c
+ 
+ source_block/elevator.o := block/elevator.c
+ 
+@@ -15,7 +15,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/genhd.o and block/genhd.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.genhd.o.cmd block/.genhd.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.genhd.o.cmd	2016-04-27 20:52:41.000192000 -0700
++++ block/.genhd.o.cmd	2016-04-27 20:28:48.068732897 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/genhd.o := gcc -Wp,-MD,block/.genhd.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(genhd)"  -D"KBUILD_MODNAME=KBUILD_STR(genhd)" -c -o block/genhd.o block/genhd.c
++cmd_block/genhd.o := i586-poky-linux-gcc -Wp,-MD,block/.genhd.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(genhd)"  -D"KBUILD_MODNAME=KBUILD_STR(genhd)" -c -o block/genhd.o block/genhd.c
+ 
+ source_block/genhd.o := block/genhd.c
+ 
+@@ -106,7 +106,7 @@
+     $(wildcard include/config/prove/locking.h) \
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/ioctl.o and block/ioctl.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.ioctl.o.cmd block/.ioctl.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.ioctl.o.cmd	2016-04-27 20:52:42.000484000 -0700
++++ block/.ioctl.o.cmd	2016-04-27 20:28:47.523723702 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/ioctl.o := gcc -Wp,-MD,block/.ioctl.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(ioctl)"  -D"KBUILD_MODNAME=KBUILD_STR(ioctl)" -c -o block/ioctl.o block/ioctl.c
++cmd_block/ioctl.o := i586-poky-linux-gcc -Wp,-MD,block/.ioctl.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(ioctl)"  -D"KBUILD_MODNAME=KBUILD_STR(ioctl)" -c -o block/ioctl.o block/ioctl.c
+ 
+ source_block/ioctl.o := block/ioctl.c
+ 
+@@ -125,7 +125,7 @@
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/stringify.h \
+   include/linux/export.h \
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/Kconfig.iosched block/Kconfig.iosched
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/Kconfig.iosched	2016-04-27 20:52:44.000515000 -0700
++++ block/Kconfig.iosched	2016-04-27 20:21:08.786985608 -0700
+@@ -12,6 +12,14 @@
+ 	  that do their own scheduling and require only minimal assistance from
+ 	  the kernel.
+ 
++
++
++config IOSCHED_SSTF
++	tristate "SSTF I/O scheduler"
++	default y
++	---help---
++	   sstf scheduler  
++
+ config IOSCHED_DEADLINE
+ 	tristate "Deadline I/O scheduler"
+ 	default y
+@@ -55,6 +63,9 @@
+ 	config DEFAULT_NOOP
+ 		bool "No-op"
+ 
++	config DEFAULT_SSTF
++		bool "SSTF" if IOSCHED_SSTF=y
++
+ endchoice
+ 
+ config DEFAULT_IOSCHED
+@@ -62,7 +73,7 @@
+ 	default "deadline" if DEFAULT_DEADLINE
+ 	default "cfq" if DEFAULT_CFQ
+ 	default "noop" if DEFAULT_NOOP
+-
++	default "sstf" if DEFAULT_SSTF
+ endmenu
+ 
+ endif
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/Makefile block/Makefile
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/Makefile	2016-04-27 20:52:43.000547000 -0700
++++ block/Makefile	2016-04-27 20:23:19.670193237 -0700
+@@ -16,6 +16,7 @@
+ obj-$(CONFIG_IOSCHED_NOOP)	+= noop-iosched.o
+ obj-$(CONFIG_IOSCHED_DEADLINE)	+= deadline-iosched.o
+ obj-$(CONFIG_IOSCHED_CFQ)	+= cfq-iosched.o
++obj-$(CONFIG_IOSCHED_SSTF)      += sstf-iosched.o
+ 
+ obj-$(CONFIG_BLOCK_COMPAT)	+= compat_ioctl.o
+ obj-$(CONFIG_BLK_DEV_INTEGRITY)	+= blk-integrity.o
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/modules.builtin block/modules.builtin
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/modules.builtin	2016-04-27 20:52:42.000714000 -0700
++++ block/modules.builtin	2016-04-27 20:26:31.920436165 -0700
+@@ -1,2 +1,3 @@
+ kernel/block/deadline-iosched.ko
+ kernel/block/cfq-iosched.ko
++kernel/block/sstf-iosched.ko
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/noop-iosched.o and block/noop-iosched.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.noop-iosched.o.cmd block/.noop-iosched.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.noop-iosched.o.cmd	2016-04-27 20:52:41.000629000 -0700
++++ block/.noop-iosched.o.cmd	2016-04-27 20:28:52.283804003 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/noop-iosched.o := gcc -Wp,-MD,block/.noop-iosched.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(noop_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(noop_iosched)" -c -o block/noop-iosched.o block/noop-iosched.c
++cmd_block/noop-iosched.o := i586-poky-linux-gcc -Wp,-MD,block/.noop-iosched.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(noop_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(noop_iosched)" -c -o block/noop-iosched.o block/noop-iosched.c
+ 
+ source_block/noop-iosched.o := block/noop-iosched.c
+ 
+@@ -125,7 +125,7 @@
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/stringify.h \
+   include/linux/export.h \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partition-generic.o and block/partition-generic.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.partition-generic.o.cmd block/.partition-generic.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.partition-generic.o.cmd	2016-04-27 20:52:42.000605000 -0700
++++ block/.partition-generic.o.cmd	2016-04-27 20:28:48.952747809 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/partition-generic.o := gcc -Wp,-MD,block/.partition-generic.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(partition_generic)"  -D"KBUILD_MODNAME=KBUILD_STR(partition_generic)" -c -o block/partition-generic.o block/partition-generic.c
++cmd_block/partition-generic.o := i586-poky-linux-gcc -Wp,-MD,block/.partition-generic.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(partition_generic)"  -D"KBUILD_MODNAME=KBUILD_STR(partition_generic)" -c -o block/partition-generic.o block/partition-generic.c
+ 
+ source_block/partition-generic.o := block/partition-generic.c
+ 
+@@ -107,7 +107,7 @@
+     $(wildcard include/config/prove/locking.h) \
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/built-in.o and block/partitions/built-in.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.built-in.o.cmd block/partitions/.built-in.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.built-in.o.cmd	2016-04-27 20:52:43.001580000 -0700
++++ block/partitions/.built-in.o.cmd	2016-04-27 20:28:50.274770111 -0700
+@@ -1 +1 @@
+-cmd_block/partitions/built-in.o :=  ld -m elf_i386   -r -o block/partitions/built-in.o block/partitions/check.o block/partitions/msdos.o block/partitions/efi.o 
++cmd_block/partitions/built-in.o :=  i586-poky-linux-ld -m elf_i386   -r -o block/partitions/built-in.o block/partitions/check.o block/partitions/msdos.o block/partitions/efi.o 
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/check.o and block/partitions/check.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.check.o.cmd block/partitions/.check.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.check.o.cmd	2016-04-27 20:52:43.001355000 -0700
++++ block/partitions/.check.o.cmd	2016-04-27 20:28:49.488756852 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/partitions/check.o := gcc -Wp,-MD,block/partitions/.check.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(check)"  -D"KBUILD_MODNAME=KBUILD_STR(check)" -c -o block/partitions/check.o block/partitions/check.c
++cmd_block/partitions/check.o := i586-poky-linux-gcc -Wp,-MD,block/partitions/.check.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(check)"  -D"KBUILD_MODNAME=KBUILD_STR(check)" -c -o block/partitions/check.o block/partitions/check.c
+ 
+ source_block/partitions/check.o := block/partitions/check.c
+ 
+@@ -139,7 +139,7 @@
+     $(wildcard include/config/panic/timeout.h) \
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/efi.o and block/partitions/efi.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.efi.o.cmd block/partitions/.efi.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.efi.o.cmd	2016-04-27 20:52:43.000842000 -0700
++++ block/partitions/.efi.o.cmd	2016-04-27 20:28:50.264769943 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/partitions/efi.o := gcc -Wp,-MD,block/partitions/.efi.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(efi)"  -D"KBUILD_MODNAME=KBUILD_STR(efi)" -c -o block/partitions/efi.o block/partitions/efi.c
++cmd_block/partitions/efi.o := i586-poky-linux-gcc -Wp,-MD,block/partitions/.efi.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(efi)"  -D"KBUILD_MODNAME=KBUILD_STR(efi)" -c -o block/partitions/efi.o block/partitions/efi.c
+ 
+ source_block/partitions/efi.o := block/partitions/efi.c
+ 
+@@ -14,7 +14,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/msdos.o and block/partitions/msdos.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.msdos.o.cmd block/partitions/.msdos.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/partitions/.msdos.o.cmd	2016-04-27 20:52:43.001202000 -0700
++++ block/partitions/.msdos.o.cmd	2016-04-27 20:28:49.879763448 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/partitions/msdos.o := gcc -Wp,-MD,block/partitions/.msdos.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(msdos)"  -D"KBUILD_MODNAME=KBUILD_STR(msdos)" -c -o block/partitions/msdos.o block/partitions/msdos.c
++cmd_block/partitions/msdos.o := i586-poky-linux-gcc -Wp,-MD,block/partitions/.msdos.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(msdos)"  -D"KBUILD_MODNAME=KBUILD_STR(msdos)" -c -o block/partitions/msdos.o block/partitions/msdos.c
+ 
+ source_block/partitions/msdos.o := block/partitions/msdos.c
+ 
+@@ -155,7 +155,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/bitops.h \
+   /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
+     $(wildcard include/config/x86/cmov.h) \
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/scsi_ioctl.o and block/scsi_ioctl.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.scsi_ioctl.o.cmd block/.scsi_ioctl.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.scsi_ioctl.o.cmd	2016-04-27 20:52:43.000775000 -0700
++++ block/.scsi_ioctl.o.cmd	2016-04-27 20:28:48.803745296 -0700
+@@ -1,4 +1,4 @@
+-cmd_block/scsi_ioctl.o := gcc -Wp,-MD,block/.scsi_ioctl.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(scsi_ioctl)"  -D"KBUILD_MODNAME=KBUILD_STR(scsi_ioctl)" -c -o block/scsi_ioctl.o block/scsi_ioctl.c
++cmd_block/scsi_ioctl.o := i586-poky-linux-gcc -Wp,-MD,block/.scsi_ioctl.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(scsi_ioctl)"  -D"KBUILD_MODNAME=KBUILD_STR(scsi_ioctl)" -c -o block/scsi_ioctl.o block/scsi_ioctl.c
+ 
+ source_block/scsi_ioctl.o := block/scsi_ioctl.c
+ 
+@@ -13,7 +13,7 @@
+     $(wildcard include/config/ring/buffer.h) \
+     $(wildcard include/config/tracing.h) \
+     $(wildcard include/config/ftrace/mcount/record.h) \
+-  /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
+   include/linux/linkage.h \
+   include/linux/compiler.h \
+     $(wildcard include/config/sparse/rcu/pointer.h) \
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/sstf-iosched.c block/sstf-iosched.c
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/sstf-iosched.c	1969-12-31 16:00:00.000000000 -0800
++++ block/sstf-iosched.c	2016-04-27 20:25:27.870355725 -0700
+@@ -0,0 +1,207 @@
++/*
++ * Author:	Marcus Imponenti
++ * Class:	CS444 - Spring 2016
++ * Assignment:	Assignment 2 - SSTF I/O Scheduler
++ */
++
++#include <linux/blkdev.h>
++#include <linux/elevator.h>
++#include <linux/bio.h>
++#include <linux/module.h>
++#include <linux/slab.h>
++
++struct look_data {
++    struct list_head queue;
++    sector_t hp;
++    int dir;
++};
++
++static void look_merged_requests
++(struct request_queue *q, struct request *rq, struct request *next)
++{
++    list_del_init(&next->queuelist);
++}
++
++static int look_dispatch(struct request_queue *q, int force)
++{
++    struct look_data *nd = q->elevator->elevator_data;
++    
++    printk("Here is the start of dispatch\n");
++
++    if(!list_empty(&nd->queue))
++    {
++        struct request *nxt_rq, *prv_rq, *rq;
++	
++    	nxt_rq = list_entry(nd->queue.next, struct request, queuelist);
++    	prv_rq = list_entry(nd->queue.prev, struct request, queuelist);
++
++    	if(prv_rq == nxt_rq)
++            {
++                printk("There is one request\n");
++                rq = nxt_rq;   
++            }
++            else
++            {
++                printk("There are mutliple requests\n");
++
++    	    if(nd->dir == 1)
++                {
++                    printk("Queue direction is going forward\n");
++    		
++    		if(nxt_rq->__sector > nd->hp)
++    		    rq = nxt_rq;
++
++    		else
++    		{
++    		    nd->dir = 0;
++                        rq = prv_rq;
++                    }
++                }
++
++    	    else
++    	    {
++    		printk("Queue direction is going backward\n");
++
++    		if(prv_rq->__sector < nd->hp)
++                        rq = prv_rq;
++    		else
++    		{
++    		    nd->dir = 1;
++    		    rq = nxt_rq;
++    		}
++	    }
++	}
++
++	printk("<NOW EXECUTING>\n");   
++        //Remove it from the queue we just got it from
++        list_del_init(&rq->queuelist);
++        //get the new position for the read head
++        nd->hp = blk_rq_pos(rq) + blk_rq_sectors(rq);
++        //give request to the elevator 
++        elv_dispatch_add_tail(q, rq);
++        printk("Things have finished.\n");
++        printk("LOOK accessing %llu\n",(unsigned long long) rq->__sector);
++        return 1;
++    }   
++    return 0;
++}
++
++
++static void look_add_request(struct request_queue *q, struct request *rq)
++{
++    struct look_data *nd = q->elevator->elevator_data;
++    struct request *nxt_rq, *prv_rq;
++ 
++    printk("Starting add\n");
++
++    if(list_empty(&nd->queue))
++    {
++        printk("The list is empty\n");
++        list_add(&rq->queuelist, &nd->queue);
++    }
++    else
++    {
++        printk("Locating position for req\n");
++
++	nxt_rq = list_entry(nd->queue.next, struct request, queuelist);
++    prv_rq = list_entry(nd->queue.prev, struct request, queuelist);
++
++	 while(blk_rq_pos(rq) > blk_rq_pos(nxt_rq))
++    {
++        nxt_rq = list_entry(nxt_rq->queuelist.next, struct request, queuelist);
++        prv_rq = list_entry(prv_rq->queuelist.prev, struct request, queuelist);
++    }
++
++	list_add(&rq->queuelist, &prv_rq->queuelist);
++        printk("Found the position\n");
++    }
++    printk("SSTF adding %llu\n", (unsigned long long) rq->__sector);
++}
++
++
++static struct request * 
++look_former_request(struct request_queue *q, struct request *rq)
++{
++    struct look_data *nd = q->elevator->elevator_data;
++
++    if(rq->queuelist.prev == &nd->queue)
++        return NULL;
++    return list_entry(rq->queuelist.prev, struct request, queuelist);
++}
++
++static struct request * 
++look_latter_request(struct request_queue *q, struct request *rq)
++{
++    struct look_data *nd = q->elevator->elevator_data;
++
++    if(rq->queuelist.next == &nd->queue)
++        return NULL;
++    return list_entry(rq->queuelist.next, struct request, queuelist);
++}
++
++static int look_init_queue(struct request_queue *q, struct elevator_type *e)
++{
++    struct look_data *nd;
++    struct elevator_queue *eq;
++
++    eq = elevator_alloc(q, e);
++    if(!eq)
++        return -ENOMEM;
++
++    nd = kmalloc_node(sizeof(*nd), GFP_KERNEL, q->node);
++    if(!nd)
++    {
++       kobject_put(&eq->kobj);
++        return -ENOMEM;
++    }
++  
++    nd->hp = 0;
++    eq->elevator_data = nd;
++
++    INIT_LIST_HEAD(&nd->queue);
++    spin_lock_irq(q->queue_lock);
++    q->elevator = eq;
++    spin_unlock_irq(q->queue_lock);
++    return 0;
++}
++
++static void look_exit_queue(struct elevator_queue *e)
++{
++    struct look_data *nd = e->elevator_data;
++
++    BUG_ON(!list_empty(&nd->queue));
++    kfree(nd);
++}
++
++static struct elevator_type elevator_look = {
++    .ops = {
++        .elevator_merge_req_fn = look_merged_requests,
++        .elevator_dispatch_fn = look_dispatch,
++        .elevator_add_req_fn = look_add_request,
++        .elevator_former_req_fn = look_former_request,
++        .elevator_latter_req_fn = look_latter_request,
++        .elevator_init_fn = look_init_queue,
++        .elevator_exit_fn = look_exit_queue,
++    },
++    .elevator_name = "sstf",
++    .elevator_owner = THIS_MODULE,
++
++};
++
++static int __init look_init(void)
++{
++	return elv_register(&elevator_look);
++}
++
++static void __exit look_exit(void)
++{
++	elv_unregister(&elevator_look);
++}
++
++module_init(look_init);
++module_exit(look_exit);
++
++
++MODULE_AUTHOR("Matthew Taylor");
++MODULE_LICENSE("GPL");
++MODULE_DESCRIPTION("SSTF I/O scheduler -- CS 444 Spring 2016");
+\ No newline at end of file
+Binary files /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/sstf-iosched.o and block/sstf-iosched.o differ
+diff -urN /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.sstf-iosched.o.cmd block/.sstf-iosched.o.cmd
+--- /nfs/stak/students/s/smithcr/OSU Classes/cs444/kernel/block/.sstf-iosched.o.cmd	1969-12-31 16:00:00.000000000 -0800
++++ block/.sstf-iosched.o.cmd	2016-04-27 20:28:55.440857262 -0700
+@@ -0,0 +1,845 @@
++cmd_block/sstf-iosched.o := i586-poky-linux-gcc -Wp,-MD,block/.sstf-iosched.o.d  -nostdinc -isystem /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/bin/i586-poky-linux/../../lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include -Iarch/x86/include/generated  -Iinclude -I/scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi -Iarch/x86/include/generated/uapi -I/scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi -Iinclude/generated/uapi -include /scratch/spring2016/cs444-119/linux-yocto-3.14/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -m32 -msoft-float -mregparm=3 -freg-struct-return -mno-mmx -mno-sse -fno-pic -mpreferred-stack-boundary=2 -march=i686 -mtune=pentium3 -mtune=generic -maccumulate-outgoing-args -Wa,-mtune=generic32 -ffreestanding -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -DCC_HAVE_ASM_GOTO --sysroot=/scratch/opt/sysroots/i586-poky-linux    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(sstf_iosched)"  -D"KBUILD_MODNAME=KBUILD_STR(sstf_iosched)" -c -o block/sstf-iosched.o block/sstf-iosched.c
++
++source_block/sstf-iosched.o := block/sstf-iosched.c
++
++deps_block/sstf-iosched.o := \
++  include/linux/blkdev.h \
++    $(wildcard include/config/block.h) \
++    $(wildcard include/config/blk/cgroup.h) \
++    $(wildcard include/config/blk/dev/integrity.h) \
++    $(wildcard include/config/pm/runtime.h) \
++    $(wildcard include/config/blk/dev/io/trace.h) \
++    $(wildcard include/config/blk/dev/bsg.h) \
++    $(wildcard include/config/blk/dev/throttling.h) \
++    $(wildcard include/config/bounce.h) \
++    $(wildcard include/config/mmu.h) \
++  include/linux/sched.h \
++    $(wildcard include/config/sched/debug.h) \
++    $(wildcard include/config/prove/rcu.h) \
++    $(wildcard include/config/smp.h) \
++    $(wildcard include/config/no/hz/common.h) \
++    $(wildcard include/config/lockup/detector.h) \
++    $(wildcard include/config/detect/hung/task.h) \
++    $(wildcard include/config/core/dump/default/elf/headers.h) \
++    $(wildcard include/config/preempt/count.h) \
++    $(wildcard include/config/sched/autogroup.h) \
++    $(wildcard include/config/virt/cpu/accounting/native.h) \
++    $(wildcard include/config/bsd/process/acct.h) \
++    $(wildcard include/config/taskstats.h) \
++    $(wildcard include/config/audit.h) \
++    $(wildcard include/config/cgroups.h) \
++    $(wildcard include/config/inotify/user.h) \
++    $(wildcard include/config/fanotify.h) \
++    $(wildcard include/config/epoll.h) \
++    $(wildcard include/config/posix/mqueue.h) \
++    $(wildcard include/config/keys.h) \
++    $(wildcard include/config/perf/events.h) \
++    $(wildcard include/config/schedstats.h) \
++    $(wildcard include/config/task/delay/acct.h) \
++    $(wildcard include/config/fair/group/sched.h) \
++    $(wildcard include/config/rt/group/sched.h) \
++    $(wildcard include/config/cgroup/sched.h) \
++    $(wildcard include/config/preempt/notifiers.h) \
++    $(wildcard include/config/preempt/rcu.h) \
++    $(wildcard include/config/tree/preempt/rcu.h) \
++    $(wildcard include/config/rcu/boost.h) \
++    $(wildcard include/config/compat/brk.h) \
++    $(wildcard include/config/cc/stackprotector.h) \
++    $(wildcard include/config/virt/cpu/accounting/gen.h) \
++    $(wildcard include/config/sysvipc.h) \
++    $(wildcard include/config/auditsyscall.h) \
++    $(wildcard include/config/rt/mutexes.h) \
++    $(wildcard include/config/debug/mutexes.h) \
++    $(wildcard include/config/trace/irqflags.h) \
++    $(wildcard include/config/lockdep.h) \
++    $(wildcard include/config/task/xacct.h) \
++    $(wildcard include/config/cpusets.h) \
++    $(wildcard include/config/futex.h) \
++    $(wildcard include/config/compat.h) \
++    $(wildcard include/config/numa.h) \
++    $(wildcard include/config/numa/balancing.h) \
++    $(wildcard include/config/fault/injection.h) \
++    $(wildcard include/config/latencytop.h) \
++    $(wildcard include/config/function/graph/tracer.h) \
++    $(wildcard include/config/tracing.h) \
++    $(wildcard include/config/memcg.h) \
++    $(wildcard include/config/uprobes.h) \
++    $(wildcard include/config/bcache.h) \
++    $(wildcard include/config/cpumask/offstack.h) \
++    $(wildcard include/config/have/unstable/sched/clock.h) \
++    $(wildcard include/config/irq/time/accounting.h) \
++    $(wildcard include/config/hotplug/cpu.h) \
++    $(wildcard include/config/no/hz/full.h) \
++    $(wildcard include/config/proc/fs.h) \
++    $(wildcard include/config/stack/growsup.h) \
++    $(wildcard include/config/debug/stack/usage.h) \
++    $(wildcard include/config/debug/atomic/sleep.h) \
++    $(wildcard include/config/preempt.h) \
++    $(wildcard include/config/mm/owner.h) \
++  include/uapi/linux/sched.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/param.h \
++  include/asm-generic/param.h \
++    $(wildcard include/config/hz.h) \
++  include/uapi/asm-generic/param.h \
++  include/linux/capability.h \
++  include/uapi/linux/capability.h \
++  include/linux/types.h \
++    $(wildcard include/config/uid16.h) \
++    $(wildcard include/config/lbdaf.h) \
++    $(wildcard include/config/arch/dma/addr/t/64bit.h) \
++    $(wildcard include/config/phys/addr/t/64bit.h) \
++    $(wildcard include/config/64bit.h) \
++  include/uapi/linux/types.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/types.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/types.h \
++  include/asm-generic/int-ll64.h \
++  include/uapi/asm-generic/int-ll64.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/bitsperlong.h \
++  include/asm-generic/bitsperlong.h \
++  include/uapi/asm-generic/bitsperlong.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/posix_types.h \
++  include/linux/stddef.h \
++  include/uapi/linux/stddef.h \
++  include/linux/compiler.h \
++    $(wildcard include/config/sparse/rcu/pointer.h) \
++    $(wildcard include/config/trace/branch/profiling.h) \
++    $(wildcard include/config/profile/all/branches.h) \
++    $(wildcard include/config/enable/must/check.h) \
++    $(wildcard include/config/enable/warn/deprecated.h) \
++    $(wildcard include/config/kprobes.h) \
++  include/linux/compiler-gcc.h \
++    $(wildcard include/config/arch/supports/optimized/inlining.h) \
++    $(wildcard include/config/optimize/inlining.h) \
++  include/linux/compiler-gcc4.h \
++    $(wildcard include/config/arch/use/builtin/bswap.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/posix_types.h \
++    $(wildcard include/config/x86/32.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/posix_types_32.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/posix_types.h \
++  include/linux/threads.h \
++    $(wildcard include/config/nr/cpus.h) \
++    $(wildcard include/config/base/small.h) \
++  include/linux/kernel.h \
++    $(wildcard include/config/preempt/voluntary.h) \
++    $(wildcard include/config/prove/locking.h) \
++    $(wildcard include/config/panic/timeout.h) \
++    $(wildcard include/config/ring/buffer.h) \
++    $(wildcard include/config/ftrace/mcount/record.h) \
++  /scratch/opt/sysroots/x86_64-pokysdk-linux/usr/lib/i586-poky-linux/gcc/i586-poky-linux/4.9.1/include/stdarg.h \
++  include/linux/linkage.h \
++  include/linux/stringify.h \
++  include/linux/export.h \
++    $(wildcard include/config/have/underscore/symbol/prefix.h) \
++    $(wildcard include/config/modules.h) \
++    $(wildcard include/config/modversions.h) \
++    $(wildcard include/config/unused/symbols.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/linkage.h \
++    $(wildcard include/config/x86/64.h) \
++    $(wildcard include/config/x86/alignment/16.h) \
++  include/linux/bitops.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bitops.h \
++    $(wildcard include/config/x86/cmov.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/alternative.h \
++    $(wildcard include/config/paravirt.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/asm.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/ptrace.h \
++    $(wildcard include/config/x86/debugctlmsr.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/segment.h \
++    $(wildcard include/config/x86/32/lazy/gs.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/const.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/page_types.h \
++    $(wildcard include/config/physical/start.h) \
++    $(wildcard include/config/physical/align.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/page_32_types.h \
++    $(wildcard include/config/highmem4g.h) \
++    $(wildcard include/config/highmem64g.h) \
++    $(wildcard include/config/page/offset.h) \
++    $(wildcard include/config/x86/pae.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ptrace.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ptrace-abi.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/processor-flags.h \
++    $(wildcard include/config/vm86.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/processor-flags.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/paravirt_types.h \
++    $(wildcard include/config/x86/local/apic.h) \
++    $(wildcard include/config/paravirt/debug.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/desc_defs.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/kmap_types.h \
++    $(wildcard include/config/debug/highmem.h) \
++  include/asm-generic/kmap_types.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable_types.h \
++    $(wildcard include/config/kmemcheck.h) \
++    $(wildcard include/config/mem/soft/dirty.h) \
++    $(wildcard include/config/compat/vdso.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable_32_types.h \
++    $(wildcard include/config/highmem.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable-2level_types.h \
++  include/asm-generic/pgtable-nopud.h \
++  include/asm-generic/pgtable-nopmd.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/spinlock_types.h \
++    $(wildcard include/config/paravirt/spinlocks.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/rwlock.h \
++  include/asm-generic/ptrace.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cpufeature.h \
++    $(wildcard include/config/x86/debug/static/cpu/has.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/required-features.h \
++    $(wildcard include/config/x86/minimum/cpu/family.h) \
++    $(wildcard include/config/math/emulation.h) \
++    $(wildcard include/config/x86/cmpxchg64.h) \
++    $(wildcard include/config/x86/use/3dnow.h) \
++    $(wildcard include/config/x86/p6/nop.h) \
++    $(wildcard include/config/matom.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/rmwcc.h \
++  include/asm-generic/bitops/fls64.h \
++  include/asm-generic/bitops/find.h \
++    $(wildcard include/config/generic/find/first/bit.h) \
++  include/asm-generic/bitops/sched.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/arch_hweight.h \
++  include/asm-generic/bitops/const_hweight.h \
++  include/asm-generic/bitops/le.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/byteorder.h \
++  include/linux/byteorder/little_endian.h \
++  include/uapi/linux/byteorder/little_endian.h \
++  include/linux/swab.h \
++  include/uapi/linux/swab.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/swab.h \
++  include/linux/byteorder/generic.h \
++  include/asm-generic/bitops/ext2-atomic-setbit.h \
++  include/linux/log2.h \
++    $(wildcard include/config/arch/has/ilog2/u32.h) \
++    $(wildcard include/config/arch/has/ilog2/u64.h) \
++  include/linux/typecheck.h \
++  include/linux/printk.h \
++    $(wildcard include/config/early/printk.h) \
++    $(wildcard include/config/printk.h) \
++    $(wildcard include/config/dynamic/debug.h) \
++  include/linux/init.h \
++    $(wildcard include/config/broken/rodata.h) \
++  include/linux/kern_levels.h \
++  include/linux/cache.h \
++    $(wildcard include/config/arch/has/cache/line/size.h) \
++  include/uapi/linux/kernel.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/sysinfo.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cache.h \
++    $(wildcard include/config/x86/l1/cache/shift.h) \
++    $(wildcard include/config/x86/internode/cache/shift.h) \
++    $(wildcard include/config/x86/vsmp.h) \
++  include/linux/dynamic_debug.h \
++  include/linux/string.h \
++    $(wildcard include/config/binary/printf.h) \
++  include/uapi/linux/string.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/string.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/string_32.h \
++  include/linux/errno.h \
++  include/uapi/linux/errno.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/errno.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/errno.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/errno-base.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/div64.h \
++  include/linux/timex.h \
++  include/uapi/linux/timex.h \
++  include/linux/time.h \
++    $(wildcard include/config/arch/uses/gettimeoffset.h) \
++  include/linux/seqlock.h \
++    $(wildcard include/config/debug/lock/alloc.h) \
++  include/linux/spinlock.h \
++    $(wildcard include/config/debug/spinlock.h) \
++    $(wildcard include/config/generic/lockbreak.h) \
++  include/linux/preempt.h \
++    $(wildcard include/config/debug/preempt.h) \
++    $(wildcard include/config/preempt/tracer.h) \
++    $(wildcard include/config/context/tracking.h) \
++  include/linux/list.h \
++    $(wildcard include/config/debug/list.h) \
++  include/linux/poison.h \
++    $(wildcard include/config/illegal/pointer/value.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/preempt.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/percpu.h \
++    $(wildcard include/config/x86/64/smp.h) \
++  include/asm-generic/percpu.h \
++    $(wildcard include/config/have/setup/per/cpu/area.h) \
++  include/linux/percpu-defs.h \
++    $(wildcard include/config/debug/force/weak/per/cpu.h) \
++  include/linux/thread_info.h \
++  include/linux/bug.h \
++    $(wildcard include/config/generic/bug.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/bug.h \
++    $(wildcard include/config/bug.h) \
++    $(wildcard include/config/debug/bugverbose.h) \
++  include/asm-generic/bug.h \
++    $(wildcard include/config/generic/bug/relative/pointers.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/thread_info.h \
++    $(wildcard include/config/ia32/emulation.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/page.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/page_32.h \
++    $(wildcard include/config/debug/virtual.h) \
++    $(wildcard include/config/flatmem.h) \
++    $(wildcard include/config/x86/3dnow.h) \
++  include/linux/range.h \
++  include/asm-generic/memory_model.h \
++    $(wildcard include/config/discontigmem.h) \
++    $(wildcard include/config/sparsemem/vmemmap.h) \
++    $(wildcard include/config/sparsemem.h) \
++  include/asm-generic/getorder.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/processor.h \
++    $(wildcard include/config/m486.h) \
++    $(wildcard include/config/xen.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/vm86.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/vm86.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/math_emu.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/sigcontext.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/sigcontext.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/current.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/msr.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/msr.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/msr-index.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/ioctl.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ioctl.h \
++  include/asm-generic/ioctl.h \
++  include/uapi/asm-generic/ioctl.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cpumask.h \
++  include/linux/cpumask.h \
++    $(wildcard include/config/debug/per/cpu/maps.h) \
++    $(wildcard include/config/disable/obsolete/cpumask/functions.h) \
++  include/linux/bitmap.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/paravirt.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/nops.h \
++    $(wildcard include/config/mk7.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/special_insns.h \
++  include/linux/personality.h \
++  include/uapi/linux/personality.h \
++  include/linux/math64.h \
++    $(wildcard include/config/arch/supports/int128.h) \
++  include/linux/err.h \
++  include/linux/irqflags.h \
++    $(wildcard include/config/irqsoff/tracer.h) \
++    $(wildcard include/config/trace/irqflags/support.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/irqflags.h \
++  include/linux/atomic.h \
++    $(wildcard include/config/arch/has/atomic/or.h) \
++    $(wildcard include/config/generic/atomic64.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/atomic.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cmpxchg.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cmpxchg_32.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/atomic64_32.h \
++  include/asm-generic/atomic-long.h \
++  include/linux/bottom_half.h \
++  include/linux/preempt_mask.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/barrier.h \
++    $(wildcard include/config/x86/ppro/fence.h) \
++  include/linux/spinlock_types.h \
++  include/linux/lockdep.h \
++    $(wildcard include/config/lock/stat.h) \
++  include/linux/rwlock_types.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/spinlock.h \
++  include/linux/jump_label.h \
++    $(wildcard include/config/jump/label.h) \
++  include/linux/rwlock.h \
++  include/linux/spinlock_api_smp.h \
++    $(wildcard include/config/inline/spin/lock.h) \
++    $(wildcard include/config/inline/spin/lock/bh.h) \
++    $(wildcard include/config/inline/spin/lock/irq.h) \
++    $(wildcard include/config/inline/spin/lock/irqsave.h) \
++    $(wildcard include/config/inline/spin/trylock.h) \
++    $(wildcard include/config/inline/spin/trylock/bh.h) \
++    $(wildcard include/config/uninline/spin/unlock.h) \
++    $(wildcard include/config/inline/spin/unlock/bh.h) \
++    $(wildcard include/config/inline/spin/unlock/irq.h) \
++    $(wildcard include/config/inline/spin/unlock/irqrestore.h) \
++  include/linux/rwlock_api_smp.h \
++    $(wildcard include/config/inline/read/lock.h) \
++    $(wildcard include/config/inline/write/lock.h) \
++    $(wildcard include/config/inline/read/lock/bh.h) \
++    $(wildcard include/config/inline/write/lock/bh.h) \
++    $(wildcard include/config/inline/read/lock/irq.h) \
++    $(wildcard include/config/inline/write/lock/irq.h) \
++    $(wildcard include/config/inline/read/lock/irqsave.h) \
++    $(wildcard include/config/inline/write/lock/irqsave.h) \
++    $(wildcard include/config/inline/read/trylock.h) \
++    $(wildcard include/config/inline/write/trylock.h) \
++    $(wildcard include/config/inline/read/unlock.h) \
++    $(wildcard include/config/inline/write/unlock.h) \
++    $(wildcard include/config/inline/read/unlock/bh.h) \
++    $(wildcard include/config/inline/write/unlock/bh.h) \
++    $(wildcard include/config/inline/read/unlock/irq.h) \
++    $(wildcard include/config/inline/write/unlock/irq.h) \
++    $(wildcard include/config/inline/read/unlock/irqrestore.h) \
++    $(wildcard include/config/inline/write/unlock/irqrestore.h) \
++  include/uapi/linux/time.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/param.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/timex.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/tsc.h \
++    $(wildcard include/config/x86/tsc.h) \
++  include/linux/jiffies.h \
++  include/linux/plist.h \
++    $(wildcard include/config/debug/pi/list.h) \
++  include/linux/rbtree.h \
++  include/linux/nodemask.h \
++    $(wildcard include/config/movable/node.h) \
++  include/linux/numa.h \
++    $(wildcard include/config/nodes/shift.h) \
++  include/linux/mm_types.h \
++    $(wildcard include/config/split/ptlock/cpus.h) \
++    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
++    $(wildcard include/config/have/cmpxchg/double.h) \
++    $(wildcard include/config/have/aligned/struct/page.h) \
++    $(wildcard include/config/transparent/hugepage.h) \
++    $(wildcard include/config/want/page/debug/flags.h) \
++    $(wildcard include/config/aio.h) \
++    $(wildcard include/config/mmu/notifier.h) \
++    $(wildcard include/config/compaction.h) \
++  include/linux/auxvec.h \
++  include/uapi/linux/auxvec.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/auxvec.h \
++  include/linux/rwsem.h \
++    $(wildcard include/config/rwsem/generic/spinlock.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/rwsem.h \
++  include/linux/completion.h \
++  include/linux/wait.h \
++  include/uapi/linux/wait.h \
++  include/linux/page-debug-flags.h \
++    $(wildcard include/config/page/poisoning.h) \
++    $(wildcard include/config/page/guard.h) \
++    $(wildcard include/config/page/debug/something/else.h) \
++  include/linux/uprobes.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/uprobes.h \
++  include/linux/notifier.h \
++  include/linux/mutex.h \
++    $(wildcard include/config/mutex/spin/on/owner.h) \
++  include/linux/srcu.h \
++  include/linux/rcupdate.h \
++    $(wildcard include/config/rcu/torture/test.h) \
++    $(wildcard include/config/tree/rcu.h) \
++    $(wildcard include/config/rcu/trace.h) \
++    $(wildcard include/config/rcu/user/qs.h) \
++    $(wildcard include/config/tiny/rcu.h) \
++    $(wildcard include/config/debug/objects/rcu/head.h) \
++    $(wildcard include/config/rcu/nocb/cpu.h) \
++    $(wildcard include/config/no/hz/full/sysidle.h) \
++  include/linux/debugobjects.h \
++    $(wildcard include/config/debug/objects.h) \
++    $(wildcard include/config/debug/objects/free.h) \
++  include/linux/rcutree.h \
++  include/linux/workqueue.h \
++    $(wildcard include/config/debug/objects/work.h) \
++    $(wildcard include/config/freezer.h) \
++    $(wildcard include/config/sysfs.h) \
++  include/linux/timer.h \
++    $(wildcard include/config/timer/stats.h) \
++    $(wildcard include/config/debug/objects/timers.h) \
++  include/linux/ktime.h \
++    $(wildcard include/config/ktime/scalar.h) \
++  include/linux/page-flags-layout.h \
++  include/generated/bounds.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/mmu.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cputime.h \
++  include/asm-generic/cputime.h \
++    $(wildcard include/config/virt/cpu/accounting.h) \
++  include/asm-generic/cputime_jiffies.h \
++  include/linux/smp.h \
++  include/linux/llist.h \
++    $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/smp.h \
++    $(wildcard include/config/x86/io/apic.h) \
++    $(wildcard include/config/x86/32/smp.h) \
++    $(wildcard include/config/debug/nmi/selftest.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/mpspec.h \
++    $(wildcard include/config/x86/numaq.h) \
++    $(wildcard include/config/eisa.h) \
++    $(wildcard include/config/x86/mpparse.h) \
++    $(wildcard include/config/acpi.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/mpspec_def.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/x86_init.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/bootparam.h \
++  include/linux/screen_info.h \
++  include/uapi/linux/screen_info.h \
++  include/linux/apm_bios.h \
++  include/uapi/linux/apm_bios.h \
++  include/linux/edd.h \
++  include/uapi/linux/edd.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/e820.h \
++    $(wildcard include/config/efi.h) \
++    $(wildcard include/config/hibernation.h) \
++    $(wildcard include/config/memtest.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/e820.h \
++    $(wildcard include/config/intel/txt.h) \
++  include/linux/ioport.h \
++    $(wildcard include/config/memory/hotremove.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/ist.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ist.h \
++  include/video/edid.h \
++    $(wildcard include/config/x86.h) \
++  include/uapi/video/edid.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/apicdef.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/apic.h \
++    $(wildcard include/config/x86/x2apic.h) \
++  include/linux/pm.h \
++    $(wildcard include/config/vt/console/sleep.h) \
++    $(wildcard include/config/pm.h) \
++    $(wildcard include/config/pm/sleep.h) \
++    $(wildcard include/config/pm/clk.h) \
++    $(wildcard include/config/pm/generic/domains.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/fixmap.h \
++    $(wildcard include/config/paravirt/clock.h) \
++    $(wildcard include/config/provide/ohci1394/dma/init.h) \
++    $(wildcard include/config/x86/visws/apic.h) \
++    $(wildcard include/config/pci/mmconfig.h) \
++    $(wildcard include/config/x86/intel/mid.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/acpi.h \
++    $(wildcard include/config/acpi/numa.h) \
++  include/acpi/pdc_intel.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/numa.h \
++    $(wildcard include/config/numa/emu.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/topology.h \
++    $(wildcard include/config/x86/ht.h) \
++  include/asm-generic/topology.h \
++    $(wildcard include/config/have/memoryless/nodes.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/numa_32.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/realmode.h \
++    $(wildcard include/config/acpi/sleep.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/io.h \
++    $(wildcard include/config/mtrr.h) \
++  include/asm-generic/iomap.h \
++    $(wildcard include/config/has/ioport.h) \
++    $(wildcard include/config/pci.h) \
++    $(wildcard include/config/generic/iomap.h) \
++  include/asm-generic/pci_iomap.h \
++    $(wildcard include/config/no/generic/pci/ioport/map.h) \
++    $(wildcard include/config/generic/pci/iomap.h) \
++  include/linux/vmalloc.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pvclock.h \
++  include/linux/clocksource.h \
++    $(wildcard include/config/arch/clocksource/data.h) \
++    $(wildcard include/config/clocksource/watchdog.h) \
++    $(wildcard include/config/clksrc/of.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pvclock-abi.h \
++  include/asm-generic/fixmap.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/idle.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/io_apic.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/irq_vectors.h \
++    $(wildcard include/config/have/kvm.h) \
++  include/linux/sem.h \
++  include/uapi/linux/sem.h \
++  include/linux/ipc.h \
++  include/linux/uidgid.h \
++    $(wildcard include/config/user/ns.h) \
++  include/linux/highuid.h \
++  include/uapi/linux/ipc.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ipcbuf.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/ipcbuf.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/sembuf.h \
++  include/linux/signal.h \
++    $(wildcard include/config/old/sigaction.h) \
++  include/uapi/linux/signal.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/signal.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/signal.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/signal-defs.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/siginfo.h \
++  include/asm-generic/siginfo.h \
++  include/uapi/asm-generic/siginfo.h \
++  include/linux/pid.h \
++  include/linux/percpu.h \
++    $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
++    $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
++  include/linux/mmdebug.h \
++    $(wildcard include/config/debug/vm.h) \
++  include/linux/pfn.h \
++  include/linux/topology.h \
++    $(wildcard include/config/sched/smt.h) \
++    $(wildcard include/config/sched/mc.h) \
++    $(wildcard include/config/sched/book.h) \
++    $(wildcard include/config/use/percpu/numa/node/id.h) \
++  include/linux/mmzone.h \
++    $(wildcard include/config/force/max/zoneorder.h) \
++    $(wildcard include/config/cma.h) \
++    $(wildcard include/config/memory/isolation.h) \
++    $(wildcard include/config/zone/dma.h) \
++    $(wildcard include/config/zone/dma32.h) \
++    $(wildcard include/config/memory/hotplug.h) \
++    $(wildcard include/config/have/memblock/node/map.h) \
++    $(wildcard include/config/flat/node/mem/map.h) \
++    $(wildcard include/config/no/bootmem.h) \
++    $(wildcard include/config/have/memory/present.h) \
++    $(wildcard include/config/need/node/memmap/size.h) \
++    $(wildcard include/config/need/multiple/nodes.h) \
++    $(wildcard include/config/have/arch/early/pfn/to/nid.h) \
++    $(wildcard include/config/sparsemem/extreme.h) \
++    $(wildcard include/config/have/arch/pfn/valid.h) \
++    $(wildcard include/config/nodes/span/other/nodes.h) \
++    $(wildcard include/config/holes/in/zone.h) \
++    $(wildcard include/config/arch/has/holes/memorymodel.h) \
++  include/linux/pageblock-flags.h \
++    $(wildcard include/config/hugetlb/page.h) \
++    $(wildcard include/config/hugetlb/page/size/variable.h) \
++  include/linux/memory_hotplug.h \
++    $(wildcard include/config/have/arch/nodedata/extension.h) \
++    $(wildcard include/config/have/bootmem/info/node.h) \
++  include/linux/proportions.h \
++  include/linux/percpu_counter.h \
++  include/linux/seccomp.h \
++    $(wildcard include/config/seccomp.h) \
++    $(wildcard include/config/seccomp/filter.h) \
++  include/uapi/linux/seccomp.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/seccomp.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/seccomp_32.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/unistd.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/unistd.h \
++    $(wildcard include/config/x86/x32/abi.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/unistd.h \
++  arch/x86/include/generated/uapi/asm/unistd_32.h \
++  include/linux/rculist.h \
++  include/linux/rtmutex.h \
++    $(wildcard include/config/debug/rt/mutexes.h) \
++  include/linux/resource.h \
++  include/uapi/linux/resource.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/resource.h \
++  include/asm-generic/resource.h \
++  include/uapi/asm-generic/resource.h \
++  include/linux/hrtimer.h \
++    $(wildcard include/config/high/res/timers.h) \
++    $(wildcard include/config/timerfd.h) \
++  include/linux/timerqueue.h \
++  include/linux/task_io_accounting.h \
++    $(wildcard include/config/task/io/accounting.h) \
++  include/linux/latencytop.h \
++  include/linux/cred.h \
++    $(wildcard include/config/debug/credentials.h) \
++    $(wildcard include/config/security.h) \
++  include/linux/key.h \
++    $(wildcard include/config/sysctl.h) \
++  include/linux/sysctl.h \
++  include/uapi/linux/sysctl.h \
++  include/linux/assoc_array.h \
++    $(wildcard include/config/associative/array.h) \
++  include/linux/selinux.h \
++    $(wildcard include/config/security/selinux.h) \
++  include/linux/gfp.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/major.h \
++  include/linux/genhd.h \
++    $(wildcard include/config/fail/make/request.h) \
++    $(wildcard include/config/solaris/x86/partition.h) \
++    $(wildcard include/config/bsd/disklabel.h) \
++    $(wildcard include/config/unixware/disklabel.h) \
++    $(wildcard include/config/minix/subpartition.h) \
++  include/linux/kdev_t.h \
++  include/uapi/linux/kdev_t.h \
++  include/linux/slab.h \
++    $(wildcard include/config/slab/debug.h) \
++    $(wildcard include/config/failslab.h) \
++    $(wildcard include/config/slob.h) \
++    $(wildcard include/config/slab.h) \
++    $(wildcard include/config/slub.h) \
++    $(wildcard include/config/debug/slab.h) \
++  include/linux/kmemleak.h \
++    $(wildcard include/config/debug/kmemleak.h) \
++  include/linux/slub_def.h \
++    $(wildcard include/config/slub/stats.h) \
++    $(wildcard include/config/memcg/kmem.h) \
++  include/linux/kobject.h \
++    $(wildcard include/config/debug/kobject/release.h) \
++  include/linux/sysfs.h \
++  include/linux/kernfs.h \
++  include/linux/idr.h \
++  include/linux/kobject_ns.h \
++  include/linux/stat.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/stat.h \
++  include/uapi/linux/stat.h \
++  include/linux/kref.h \
++  include/linux/device.h \
++    $(wildcard include/config/debug/devres.h) \
++    $(wildcard include/config/pinctrl.h) \
++    $(wildcard include/config/dma/cma.h) \
++    $(wildcard include/config/devtmpfs.h) \
++    $(wildcard include/config/sysfs/deprecated.h) \
++  include/linux/klist.h \
++  include/linux/pinctrl/devinfo.h \
++  include/linux/ratelimit.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/device.h \
++    $(wildcard include/config/x86/dev/dma/ops.h) \
++    $(wildcard include/config/intel/iommu.h) \
++    $(wildcard include/config/amd/iommu.h) \
++  include/linux/pm_wakeup.h \
++  include/linux/fs.h \
++    $(wildcard include/config/fs/posix/acl.h) \
++    $(wildcard include/config/quota.h) \
++    $(wildcard include/config/fsnotify.h) \
++    $(wildcard include/config/ima.h) \
++    $(wildcard include/config/debug/writecount.h) \
++    $(wildcard include/config/file/locking.h) \
++    $(wildcard include/config/fs/xip.h) \
++    $(wildcard include/config/migration.h) \
++  include/linux/dcache.h \
++  include/linux/rculist_bl.h \
++  include/linux/list_bl.h \
++  include/linux/bit_spinlock.h \
++  include/linux/lockref.h \
++    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
++  include/linux/path.h \
++  include/linux/list_lru.h \
++  include/linux/radix-tree.h \
++  include/linux/semaphore.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/fiemap.h \
++  include/linux/shrinker.h \
++  include/linux/migrate_mode.h \
++  include/linux/percpu-rwsem.h \
++  include/linux/blk_types.h \
++  include/uapi/linux/fs.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/limits.h \
++  include/linux/quota.h \
++    $(wildcard include/config/quota/netlink/interface.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/dqblk_xfs.h \
++  include/linux/dqblk_v1.h \
++  include/linux/dqblk_v2.h \
++  include/linux/dqblk_qtree.h \
++  include/linux/projid.h \
++  include/uapi/linux/quota.h \
++  include/linux/nfs_fs_i.h \
++  include/linux/fcntl.h \
++  include/uapi/linux/fcntl.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/fcntl.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/asm-generic/fcntl.h \
++  include/linux/pagemap.h \
++  include/linux/mm.h \
++    $(wildcard include/config/ppc.h) \
++    $(wildcard include/config/parisc.h) \
++    $(wildcard include/config/metag.h) \
++    $(wildcard include/config/ia64.h) \
++    $(wildcard include/config/ksm.h) \
++    $(wildcard include/config/shmem.h) \
++    $(wildcard include/config/debug/vm/rb.h) \
++    $(wildcard include/config/debug/pagealloc.h) \
++    $(wildcard include/config/hugetlbfs.h) \
++  include/linux/debug_locks.h \
++    $(wildcard include/config/debug/locking/api/selftests.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable_32.h \
++    $(wildcard include/config/highpte.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/pgtable-2level.h \
++  include/asm-generic/pgtable.h \
++    $(wildcard include/config/have/arch/soft/dirty.h) \
++    $(wildcard include/config/arch/uses/numa/prot/none.h) \
++  include/linux/page-flags.h \
++    $(wildcard include/config/pageflags/extended.h) \
++    $(wildcard include/config/arch/uses/pg/uncached.h) \
++    $(wildcard include/config/memory/failure.h) \
++    $(wildcard include/config/swap.h) \
++  include/linux/huge_mm.h \
++  include/linux/vmstat.h \
++    $(wildcard include/config/vm/event/counters.h) \
++    $(wildcard include/config/debug/tlbflush.h) \
++  include/linux/vm_event_item.h \
++  include/linux/highmem.h \
++  include/linux/uaccess.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/uaccess.h \
++    $(wildcard include/config/x86/intel/usercopy.h) \
++    $(wildcard include/config/debug/strict/user/copy/checks.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/smap.h \
++    $(wildcard include/config/x86/smap.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/uaccess_32.h \
++  include/linux/hardirq.h \
++  include/linux/ftrace_irq.h \
++    $(wildcard include/config/ftrace/nmi/enter.h) \
++  include/linux/vtime.h \
++  include/linux/context_tracking_state.h \
++  include/linux/static_key.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/hardirq.h \
++    $(wildcard include/config/x86/thermal/vector.h) \
++    $(wildcard include/config/x86/mce/threshold.h) \
++  include/linux/irq.h \
++    $(wildcard include/config/generic/pending/irq.h) \
++    $(wildcard include/config/hardirqs/sw/resend.h) \
++  include/linux/irqreturn.h \
++  include/linux/irqnr.h \
++  include/uapi/linux/irqnr.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/irq.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/irq_regs.h \
++  include/linux/irqdesc.h \
++    $(wildcard include/config/irq/preflow/fasteoi.h) \
++    $(wildcard include/config/sparse/irq.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/hw_irq.h \
++    $(wildcard include/config/irq/remap.h) \
++  include/linux/profile.h \
++    $(wildcard include/config/profiling.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/sections.h \
++    $(wildcard include/config/debug/rodata.h) \
++  include/asm-generic/sections.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/cacheflush.h \
++    $(wildcard include/config/x86/pat.h) \
++    $(wildcard include/config/debug/rodata/test.h) \
++  include/asm-generic/cacheflush.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/highmem.h \
++  include/linux/interrupt.h \
++    $(wildcard include/config/irq/forced/threading.h) \
++    $(wildcard include/config/generic/irq/probe.h) \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/tlbflush.h \
++  include/linux/hugetlb_inline.h \
++  include/linux/backing-dev.h \
++    $(wildcard include/config/debug/fs.h) \
++  include/linux/flex_proportions.h \
++  include/linux/writeback.h \
++  include/linux/mempool.h \
++  include/linux/bio.h \
++  include/linux/ioprio.h \
++  include/linux/iocontext.h \
++  include/linux/bsg.h \
++  include/uapi/linux/bsg.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/scatterlist.h \
++  include/asm-generic/scatterlist.h \
++    $(wildcard include/config/debug/sg.h) \
++    $(wildcard include/config/need/sg/dma/length.h) \
++  include/linux/elevator.h \
++  include/linux/hashtable.h \
++  include/linux/hash.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/hash.h \
++  include/linux/module.h \
++    $(wildcard include/config/module/sig.h) \
++    $(wildcard include/config/kallsyms.h) \
++    $(wildcard include/config/tracepoints.h) \
++    $(wildcard include/config/event/tracing.h) \
++    $(wildcard include/config/module/unload.h) \
++    $(wildcard include/config/constructors.h) \
++    $(wildcard include/config/debug/set/module/ronx.h) \
++  include/linux/kmod.h \
++  include/linux/elf.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/elf.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/user.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/user_32.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/vdso.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/desc.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/uapi/asm/ldt.h \
++  include/uapi/linux/elf.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/include/uapi/linux/elf-em.h \
++  include/linux/moduleparam.h \
++    $(wildcard include/config/alpha.h) \
++    $(wildcard include/config/ppc64.h) \
++  include/linux/tracepoint.h \
++  /scratch/spring2016/cs444-119/linux-yocto-3.14/arch/x86/include/asm/module.h \
++    $(wildcard include/config/m586.h) \
++    $(wildcard include/config/m586tsc.h) \
++    $(wildcard include/config/m586mmx.h) \
++    $(wildcard include/config/mcore2.h) \
++    $(wildcard include/config/m686.h) \
++    $(wildcard include/config/mpentiumii.h) \
++    $(wildcard include/config/mpentiumiii.h) \
++    $(wildcard include/config/mpentiumm.h) \
++    $(wildcard include/config/mpentium4.h) \
++    $(wildcard include/config/mk6.h) \
++    $(wildcard include/config/mk8.h) \
++    $(wildcard include/config/melan.h) \
++    $(wildcard include/config/mcrusoe.h) \
++    $(wildcard include/config/mefficeon.h) \
++    $(wildcard include/config/mwinchipc6.h) \
++    $(wildcard include/config/mwinchip3d.h) \
++    $(wildcard include/config/mcyrixiii.h) \
++    $(wildcard include/config/mviac3/2.h) \
++    $(wildcard include/config/mviac7.h) \
++    $(wildcard include/config/mgeodegx1.h) \
++    $(wildcard include/config/mgeode/lx.h) \
++  include/asm-generic/module.h \
++    $(wildcard include/config/have/mod/arch/specific.h) \
++    $(wildcard include/config/modules/use/elf/rel.h) \
++    $(wildcard include/config/modules/use/elf/rela.h) \
++
++block/sstf-iosched.o: $(deps_block/sstf-iosched.o)
++
++$(deps_block/sstf-iosched.o):

@@ -17,4 +17,4 @@ Aprtil 27
 |	 6:32 pm	-	working on the write up
 |	 8:46 pm	-	IT'S WORKING!!
 |	 9:02 pm	-	now we have to make the it do the patch stuff
-|	 
+|	 9:19 pm	-	The patch worked! :D 

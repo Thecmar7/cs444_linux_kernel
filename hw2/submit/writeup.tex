@@ -1,0 +1,120 @@
+%\documentclass[10pt,serif,draftclsnofoot,onecolumn]{IEEEtran}
+\documentclass[10pt,journal,compsoc, onecolumn]{IEEEtran}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+
+\begin{document}
+
+%Centering begin 
+\centering{ 
+\Huge{Homework 2 Write Up} \\
+
+\bigskip \bigskip \bigskip \bigskip 
+
+\Large{ Cramer Smith }\\
+\bigskip 
+
+\today \\
+
+\bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip 
+
+CS 444 \\
+
+\bigskip 
+
+Operating Systems II}\\
+\bigskip \bigskip \bigskip \bigskip \bigskip 
+
+%Centering end
+
+\begin{abstract}
+In this assignment we made a SSTF scheduler. This is a great way of learning about the details of an operating system. This also tells about what I learned how I debugged and what my design was. It also contains a git log and a work log.
+\end{abstract}
+
+\newpage
+\hfill
+\bigskip \bigskip
+
+%% THIS IS WHERE THE PAPER BEGINS
+\begin{flushleft}
+
+\section{Questions}
+
+\begin{enumerate}
+
+\item What do you think the main point of this assignment is?
+
+This assignment is meant to teach us about schedulers and how to implement them. It also was an introduction about how to work in the kernel and make patches. This will make the future assignments easier as we already know how to do the patching and work in kernel. Honestly making and running the kernel was the worst part of the assignment. Making the kernel every time I needed to debug was so exhausting.
+
+\bigskip
+\item How did you personally approach the problem? Design decisions, algorithm, etc.
+
+I approach this problem by first doing research. I learned what a Shortest Seek Time First works and the basic of the algorithm then I studied the noop scheduler that was given to us and how I could modify that to make the and SSTF. I started modifying the Kconfig and Make file to allow for my scheduler. Then I could start changing the SSFT scheduler. I start implementing my design.
+
+\bigskip
+\item How did you ensure your solution was correct? Testing details, for instance.
+
+I checked if this is correct by having a bunch of printk()s. I have it call a print every time the scheduler is updated. The kernel recognizes our scheduler and the config has it's own block layer.
+
+\bigskip
+\item What did you learn?
+
+I learned the entire assignment this is so much stuff that doesn't make complete sense to me. I am enjoying learning all of these topics. I understand that this is very important to every computer and this is a great things to learn. 
+
+\end{enumerate}
+
+\section{Version Control Log}
+%% version, blank, num, commit, made, altered, deleted 
+\bigskip
+\begin{tabular}{  | l | c | c | r | r | r | }
+  \hline	
+  Ve & Commit				&  Ma & Al & Dl \\
+  \hline
+  
+  1 & \href{https://github.com/Thecmar7/cs444_linux_kernel/tree/cb36b23a110062fbd30def9ea43db3d97767213b}{init}  & 124 & 2 & 0 \\
+  2 & \href{https://github.com/Thecmar7/cs444_linux_kernel/commit/c76a4df55e52a3645fc8e5482940c561207625c6}{I made a readme}  & 7 & 1 & 0 \\  
+  3 & \href{https://github.com/Thecmar7/cs444_linux_kernel/commit/dcf4f4dba439451101f7b767cebb45012bcad315}{Figured some stuff out}  & 396 & 5 & 69 \\ 
+  4 & \href{https://github.com/Thecmar7/cs444_linux_kernel/commit/e0c6b65cb7ff299591dfdb671345264273a0247c}{Fixed it}  & 0 & 1 & 138 \\
+  5 & \href{https://github.com/Thecmar7/cs444_linux_kernel/commit/d7ffeeeea4a0e33302805d3dfbcd9d539d80f553}{fixed it I think.}  & 4 & 249 & 243 \\
+  6 & \href{https://github.com/Thecmar7/cs444_linux_kernel/commit/8d285e5c143accce0fe949104a59139a4e427d6d}{Patch stuff worked}  & 9,491 & 147 & 0 \\
+  
+  \hline  
+\end{tabular}
+
+\section{Work Log}
+\bigskip
+%% day | time | task  
+\begin{tabular}{ |  c c | l | }
+
+\hline
+April 25, 2016 & & \\
+ - & 9:30 pm & Got the noop-scheduler file \\
+ - & 9:51 pm& Made a github finally for this class. \\
+ - & 9:51 pm & Made a github finally for this class. \\
+ - & 10:12 pm & Started reading Noop \\
+ - & 10:57 pm & Time to code, looking up what a SSFT is \\
+ 
+ April 26, 2016 && \\
+  - & 8:40 pm & Added some stuff \\
+ 
+ April 27, 2016 && \\
+-&	 3:20 pm	&	Started messing with config \\
+-&	 4:20 pm	&	nothing works \\
+-&	 6:05 pm	&	Stuff now works, but not all of it \\
+-&	 6:32 pm	&	working on the write up \\
+-&	 8:46 pm	&	IT'S WORKING!! \\
+-&	 9:02 pm	&	now we have to make the it do the patch stuff \\
+-&	 9:19 pm	&	The patch worked! :D \\
+\hline
+
+\end{tabular}
+
+\end{flushleft}
+
+\end{document}
