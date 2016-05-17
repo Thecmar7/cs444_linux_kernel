@@ -35,7 +35,7 @@ static char *key = "Cr4m3r5m17h";
 static int key_len = 11;
 struct crypto_cipher *crypt_cipher;
 
-module_param(crypto_key, charp, 0644);
+module_param(key, charp, 0644);
 
 /******************************************************************************
  * We can tweak our hardware sector size, but the kernel talks to us
