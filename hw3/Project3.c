@@ -1,5 +1,7 @@
 /******************************************************************************
  * Cramer Smith
+ *		CS 444
+ *		May 16, 2016
  *
  *
  * The base of this code I got from the blog post at
