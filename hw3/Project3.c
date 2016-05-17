@@ -82,7 +82,7 @@ static void sbd_transfer(struct sbd_device *dev, sector_t sector,
 	}
 	
 	if (write){
-		decrypt_flag = 0
+		decrypt_flag = 0;
 		encrypt_flag = 1;
 		dst = dev->data + offset;
 		src = buffer;
@@ -103,23 +103,25 @@ static void sbd_transfer(struct sbd_device *dev, sector_t sector,
 	}
 	
 	length = nbytes;
+	printk("\n\n");
 	if (encrypt_flag && !decrypt_flag) {
 		printk("Encrypt:\n");
 	} else {
 		printk("Decrypt:\n");
 	}
-	while (len--) {
-		printk("%u", (unsigned) *src++);
+	while (length--) {
+		printk("%u ", (unsigned) *src++);
 	}
 	
 	length = nbytes;
-	if (!encrypt_flag && decrypt_flag) {
+	printk("\n\n");
+	if (encrypt_flag && !decrypt_flag) {
 		printk("Decrypt:\n");
 	} else {
 		printk("Encrypt:\n");
 	}
-	while (len--) {
-		printk("%u", (unsigned) *dst++);
+	while (length--) {
+		printk("%u ", (unsigned) *dst++);
 	}
 	printk("\n");
 }
